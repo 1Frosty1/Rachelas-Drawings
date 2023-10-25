@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css');
+:root{
+--color-1: #a7c957;
+--color-2: #6a994e;
+--color-3: #386641;
+--color-4: #f2e8cf;
+--color-5: #bc4749;
+
+}
+*{
+    margin:0 ;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background: var(--color-4);
+    color: var(--color-3); 
+    margin: 0rem;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+
+    
+}
+html{    
+    scroll-behavior: smooth;
+}
+
+#container{
+    padding: 10px 0;
+    background: var(--color-3);
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5%;
+    width: 90%;
+}
+
+nav{
+    overflow-y: show;
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 5vw;
+    margin: 0;
+    
+}
+
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 0 20px;
+}
+
+nav ul li a{
+    color: var(--color-4); 
+    text-decoration: none;
+    font-size: 1.3em;
+    transition: all 200ms;
+}
+
+nav ul li a:hover{
+    color: var(--color-5);
+}
+
+.dropdown .project {
+    position: absolute;
+    background-color: var(--color-2);
+    height: 0px;
+    overflow: hidden;
+    visibility: hidden;
+    margin-top: 1em;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+
+    transition: 0.2s ease-in-out;
+}
+.dropdown:hover .project{
+    height: 8.5em;   
+    visibility: visible;
+  }
+.dropdown:hover .project .drop-item a:hover{
+    color: var(--color-5);
+}
+  
+.dropdown .project .drop-item {
+    list-style-type: none;
+    padding: 5px 10px;
+    text-align: right;
+}
+
+/* -------------------lang-menu------------------- */
+.lang-menu {
+    text-align: right;
+    font-weight: bold;
+    color: var(--color-4);
+
+}
+.lang-menu .selected-lang {
+    display: flex;   
+    justify-content: space-between;
+    line-height: 2;
+    cursor: pointer;
+}
+.lang-menu .selected-lang:before {
+    content: '';
+    display: flex;
+    width: 32px;
+    height: 32px;
+
+}
+
+.lang-menu ul {
+    visibility: hidden;
+    background-color: #fff;
+    position: absolute;
+    width: 125px;
+    height: 0%;
+    border-radius: 5px;
+    color: var(--color-4);
+    margin-left: 2em;
+
+    transition: all ease 0.5s;
+
+}
+
+.lang-menu:hover ul, .lang-menu ul:hover ul{
+    visibility: visible;
+    height: 100%;
+    width: 125px ;
+}
+
+.lang-menu ul li {
+    
+    list-style: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lang-menu ul li a {
+    
+    text-decoration: none;
+    width: 125px;
+    visibility: hidden;
+    color: var(--color-3);
+    padding-bottom: 1vw;
+    
+    transition: all ease 100ms;
+
+}
+
+.lang-menu ul li:hover {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+.lang-menu ul li a:before {
+    content: '';
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    vertical-align: middle;
+    
+}
+.lang-menu ul:hover li a, .lang-menu:hover ul li a {
+    visibility: visible;
+}
+.lang-menu img{
+    width: 20px;
+    justify-self: center;
+    align-self: right;
+    margin-right: 1vw;
+    margin-left: 10px;
+    border: solid black 1px;
+    
+}
+.lang-menu img.img-1{
+    width: 25px;
+    height: fit-content;
+    justify-self: center;
+    align-self: center;  
+
+}
+.selected-lang{
+    margin-right: 1em;
+}
+/* -------------------Home------------------- */
+#header{
+    height: 80vh;
+    background-image: url(Other_Pictures/Background-2.png);
+    background-position: 20%;
+    background-size: 80vmax;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+
+
+}
+.header-text{
+    padding: 10px 10%;
+    padding-top: 20%;
+    font-size: 30px;
+    margin-right: 50%;
+
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 10px;  
+}
+.header-text h1 span{
+    color: var(--color-5);
+}
+.hebrew-header{
+    text-align: right;
+
+}
+/* -------------------about------------------- */
+
+#about{
+    padding: 80px 80px;
+    color: var(--color-3);
+    background-color: var(--color-2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+
+}
+.about-col-1 img{
+    width: 30vw;    
+    border-radius: 15px;
+    margin-top: 12.5%;
+    
+}
+.about-col-2{
+    flex-basis: 60%;
+    font-size: 23px;
+
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: var(--color-5);
+}
+
+/* -------------------stories------------------- */
+#stories{
+    background: var(--color-4);
+    padding-top: 100px;
+    padding-bottom: 200px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.biography-container {
+    max-width: 80vw;
+    max-height: 2000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--color-2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: right;
+}
+
+.biography-tab {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: var(--color-5);
+    color: var(--color-4);
+    cursor: pointer;
+    justify-content: center;
+    text-align: right;
+    margin-bottom: 1vw;
+
+    transition: all ease 200ms;
+}
+
+.biography-tab:hover {
+    background-color: var(--color-3);
+}
+
+.biography-content {
+    display: none;
+    padding: 20px;
+    text-align: right;
+}
+.biography-content img{
+    width: 25vw;
+    height: 25vw;
+    object-fit: cover;
+}
+
+.biography-content.active {
+    display: block;
+    text-align: right;
+}
+
+.biography-image {
+    max-width: 100%;
+    height: auto;
+}
+/* -------------------gallery------------------- */
+#people, #animals, #landscapes, #flora{   
+
+    user-select: none;
+    background-color: var(--color-4);
+    margin-left: 10%;
+    margin-right: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+}
+
+
+.first-div.gallery{
+
+    margin-top: 50px;
+     
+}
+
+img.img-gallery {
+    width: 25vw;
+    height: 25vw;
+    padding: 10px;
+    object-fit: cover;
+    
+}
+
+a.gallery{
+    width: 500px;
+    height: 100%;
+    
+}
+
+div.gallery{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+       
+    user-select: none;
+}
+div.padder{
+    background-color: var(--color-2);
+    padding: 100px;
+}
+h1.gallery-title {
+    font-size: 50px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 100px;
+    
+
+}
+
+
+/* -------------------css for phone screen------------------- */
+@media screen and (max-width: 1458px) {
+    .about-col-2 p{
+        font-size: 18px;
+    }
+    
+}
+@media screen and (max-width: 1364px) {
+       
+    .header-text{
+        font-size: 25px; 
+    }
+    .header-text h1{
+        font-size: 50px; 
+    }
+    .about-col-2 p{
+        font-size: 15px;
+    }
+    
+    
+}
+@media screen and (max-width: 1136px) {
+    
+    .header-text{
+        font-size: 20px; 
+        padding-top: 30%;
+    }
+    .header-text h1{
+        font-size: 40px; 
+    }
+    .about-col-2 p{
+        font-size: 12px;
+    }
+    .about-col-1 img{
+        width: 25vw;    
+        margin-top: 50%;
+        
+    }
+}
+@media screen and (max-width: 909px) {
+    
+    
+    .header-text{
+        font-size: 18px; 
+        padding-top: 30%;
+    }
+    .header-text h1{
+        font-size: 30px; 
+    }
+    .about-col-2 p{
+        font-size: 10px;
+    }
+    .about-col-1 img{
+        width: 25vw;    
+        margin-top: 80%;
+        
+    }
+    .biography-tab{
+        font-size: 12px;
+    }
+    
+    
+}
+@media screen and (max-width: 682px) {
+    
+    
+    #header{
+        background-size: 110vmin;
+        background-position: 60%;
+        background-repeat: no-repeat;
+    }
+    .header-text{
+        font-size: 18px; 
+        padding-top: 40%;
+    }
+    .header-text h1{
+        font-size: 24px; 
+    }
+    .about-col-1 img{
+        display: none;          
+    }
+    .row{
+        display: block;
+    }
+    nav ul li {
+        padding: 0 10px;
+    }
+    .biography-tab{
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+    .biography-content p{
+        font-size: 0.8em
+    }
+    
+}
+@media screen and (max-width: 545px) {
+    
+    .header-text{
+        font-size: 14px; 
+        padding-top: 50%;
+    }
+    .header-text h1{
+        font-size: 20px; 
+    }
+    .about-col-1 img{
+        display: none;          
+    }
+    .row{
+        display: block;
+    }
+    nav ul li {
+        padding: 0 5px;
+    }
+    .biography-tab{
+        padding: 5px 5px;
+        font-size: 12px;
+    }
+    .biography-content p{
+        font-size: 0.7em
+    }
+}
+@media screen and (max-width: 454px) {
+    
+    
+    .header-text{
+        font-size: 12px; 
+        padding-top: 70%;
+    }
+    .header-text h1{
+        font-size: 18px; 
+    }
+    nav ul li {
+        padding: 0 3px;
+    }
+    nav ul li a{
+        font-size: 0.9em;
+    }
+    
+    
+}
+
+
+
